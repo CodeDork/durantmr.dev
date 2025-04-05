@@ -29,6 +29,8 @@ body {
   #about {
     word-wrap: break-word;
     white-space: normal;
+    overflow-wrap: break-word;
+    text-align: center;
   }
     0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */  
   h1, h2, h3, h4, p {
