@@ -9,8 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d dist"
-
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -39,9 +38,7 @@
   "license": "ISC",
   "homepage": "https://durantmr.github.io/durantmr.dev",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/durantmr/durantmr.dev.git"
-}
-
-
+    "type": "git",
+    "url": "https://github.com/durantmr/durantmr.dev.git"
+  }
 }
