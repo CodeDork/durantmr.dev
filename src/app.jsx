@@ -19,7 +19,7 @@ function App() {
           <section id="about" className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">About Me</h2>
             <p className="text-lg">
-              I'm Durant, a passionate software developer. I specialize in full-stack web development and have a deep passion for building scalable applications.
+              I'm Durant, a passionate software developer. I specialize in full-stack web development and have a deep passion for building scalable applications. I am proficient in MySQL, Python, C++, and Amazon Web Services (AWS) Foundational Products, with years of experience in data analysis, software development, and cloud computing. I am skilled in using data-driven decision-making, building scalable applications, and implementing automation in cloud environments. Experienced in developing solutions that improve operational efficiency and data accuracy. I am passionate in pursuing Information Technology - Computer Programming and getting hands-on experience in data structures, database management, and web development.
             </p>
           </section>
   
