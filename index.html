@@ -132,6 +132,28 @@
       });
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-
+    <script type="text/javascript">
+      // Add your public key and other details
+      const publicKey = 'TM3v5X7CgwuuICHXv'; // Replace with your public key from EmailJS
+      const serviceID = 'service_3kxo3a2'; // Replace with your service ID from EmailJS
+      const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID from EmailJS
+    
+      // Add event listener to the form submit button
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+    
+          // Create an object with the form values
+          let formData = new FormData(this);
+          
+          // Send form data via EmailJS
+          emailjs.sendForm(serviceID, templateID, formData, publicKey)
+              .then(function(response) {
+                  alert("Message sent successfully!");
+              }, function(error) {
+                  alert("Failed to send message. Please try again.");
+              });
+      });
+    </script>
+    
   </body>
 </html>

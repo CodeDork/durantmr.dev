@@ -148,7 +148,7 @@ body {
         position: fixed;
         bottom: 1rem;
         right: 1rem;
-        background-color:rgb(6, 28, 49); /* Blue background */
+        background-color:rgb(100, 168, 231); /* Blue background */
         color: white;
         border: none;
         border-radius: 50%;
@@ -160,6 +160,6 @@ body {
       }
       
       #back-to-top:hover {
-        background-color:rgb(43, 127, 176); /* Darker blue when hovered */
+        background-color:rgb(7, 33, 48); /* Darker blue when hovered */
       }
       
