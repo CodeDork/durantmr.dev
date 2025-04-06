@@ -3,151 +3,162 @@
 @tailwind utilities;
 
 body {
-    margin: 1rem; /* 1rem margin around the body */
-    font-family: 'Arial, sans-serif'; /* Arial font */
-    font-size: 16px; /* 16px font size */
-    line-height: 1.5; /* 1.5 line height */
-    list-style: none; /* no list style */
-    text-decoration: none; /* no text decoration */
-    text-align: center; /* center aligned text */
-    padding: 1rem; /* 1rem padding around the body */
-    border-radius: 0.5rem; /* 0.5rem border radius */
-    box-shadow: 0 4px 6px rgba(51, 39, 39, 0.1); /* shadow */
-    border: 1px solid #ccc; /* light gray border */
-    font-weight: 400; /* normal font weight */
-    text-transform: none; /* no text transform */
-    text-shadow: none; /* no text shadow */
-    text-overflow: ellipsis; /* ellipsis for overflow text */
-    overflow: hidden; /* hidden overflow */
-    white-space: nowrap; /* no wrap */
-    background-color:rgb(138, 167, 216); /* dark gray background */
-    color:rgb(36, 43, 56); /* dark gray text */
-   0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-  0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-  0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-  }
-  #about {
-    word-wrap: break-word;
-    white-space: normal;
-  }
-    0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */  
-  h1, h2, h3, h4, p {
-    margin: 0.5rem;  /* 0.5 margin around text */
-    padding: 0.5rem; /* 0.5 padding around text */
-    font-weight: 600; /* bold font weight */
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-    text-overflow: ellipsis; /* ellipsis for overflow text */
-  }
-  ul {
-    list-style-position: inside;
-    text-align: center;
-  }
-  
-  li {
-    display: inline-block;
-    margin: 10px;
-  }
-  section {
-    margin: 2rem 0; /* Adds space between each section */
-  }
-  
-  section > div {
-    padding: 2rem; /* Adds padding inside each section */
-  }
-  p {
-    word-wrap: break-word;  /* Breaks long words to avoid overflow */
-    white-space: normal;    /* Ensures text wraps to the next line */
-  }
-  div, section {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    white-space: normal;  /* Ensures text wraps to the next line */
-  }
-    a {
-        color: rgb(36, 43, 56); /* dark gray text */
-        text-decoration: none; /* no text decoration */
-        font-weight: 600; /* bold font weight */
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-    }  
-    a:hover {
-        color: rgb(138, 167, 216); /* light gray text */
-        text-decoration: underline; /* underline on hover */
-    }
-    button {
-        background-color: rgb(138, 167, 216); /* light gray background */
-        color: rgb(36, 43, 56); /* dark gray text */
-        border: none; /* no border */
-        border-radius: 0.5rem; /* 0.5rem border radius */
-        padding: 0.5rem 1rem; /* 0.5rem padding */
-        font-size: 1rem; /* 1rem font size */
-        font-weight: 600; /* bold font weight */
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-        cursor: pointer; /* pointer cursor */
-        transition: background-color 0.3s ease; /* transition effect */
-    }
-    button:hover {
-        background-color: rgb(36, 43, 56); /* dark gray background */
-        color: rgb(138, 167, 216); /* light gray text */
-    }
-    input[type="text"], input[type="email"], input[type="password"], textarea {
-        border: 1px solid #ccc; /* light gray border */
-        border-radius: 0.5rem; /* 0.5rem border radius */
-        padding: 0.5rem; /* 0.5rem padding */
-        font-size: 1rem; /* 1rem font size */
-        font-weight: 400; /* normal font weight */
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-        transition: border-color 0.3s ease; /* transition effect */
-    }
-    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
-        border-color: rgb(138, 167, 216); /* light gray border on focus */
-        outline: none; /* no outline */
-    }
-    textarea {
-        resize: none; /* no resize */
-        height: 100px; /* 100px height */
-        keyboard: auto; /* auto keyboard */
-        width: 20%; /* 100% width */
-        padding: 0.5rem; /* 0.5rem padding */
-    }
-    select {
-        border: 1px solid #ccc; /* light gray border */
-        border-radius: 0.5rem; /* 0.5rem border radius */
-        padding: 0.5rem; /* 0.5rem padding */
-        font-size: 1rem; /* 1rem font size */
-        font-weight: 400; /* normal font weight */
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* text shadow */
-        transition: border-color 0.3s ease; /* transition effect */
-    }
-    select:focus {
-        border-color: rgb(138, 167, 216); /* light gray border on focus */
-        outline: none; /* no outline */
-    }
-    .container {
-        max-width: 1200px; /* 1200px max width */
-        margin: 0 auto; /* center align */
-        padding: 1rem; /* 1rem padding */
-    }
-    .row {
-        display: flex; /* flex display */
-        flex-wrap: wrap; /* wrap items */
-        margin: 0 -1rem; /* negative margin */
-    }
+  margin: 1rem;
+  font-family: 'Arial, sans-serif';
+  font-size: 16px;
+  line-height: 1.5;
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(51, 39, 39, 0.1);
+  border: 1px solid #ccc;
+  font-weight: 400;
+  text-transform: none;
+  text-shadow: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgb(138, 167, 216);
+  color: rgb(36, 43, 56);
+}
+
+.section {
+  padding: 1rem;
+  background-color: rgb(209, 237, 248);
+}
+
+#projects, #contact {
+  background-color: rgb(76, 96, 116);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: rgb(215, 228, 250);
+}
+
+#resume, #about {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-overflow: ellipsis;
+}
+
+ul {
+  list-style-position: inside;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  margin: 10px;
+}
+
+section {
+  margin: 2rem 0;
+}
+
+section > div {
+  padding: 2rem;
+}
+
+p, div, section {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+a {
+  color: rgb(36, 43, 56);
+  text-decoration: none;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+  color: rgb(138, 167, 216);
+  text-decoration: underline;
+}
+
+.my-section {
+  background-color: lightblue;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+button {
+  background-color: rgb(138, 167, 216);
+  color: rgb(36, 43, 56);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(36, 43, 56);
+  color: rgb(138, 167, 216);
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+  border-color: rgb(138, 167, 216);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+  width: 20%;
+  padding: 0.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
 #back-to-top {
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
-        background-color:rgb(100, 168, 231); /* Blue background */
-        color: white;
-        border: none;
-        border-radius: 50%;
-        padding: 1rem;
-        cursor: pointer;
-        display: none;
-        font-size: 1.5rem;
-        z-index: 1000; /* Ensure it's on top of other content */
-      }
-      
-      #back-to-top:hover {
-        background-color:rgb(7, 33, 48); /* Darker blue when hovered */
-      }
-      
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(100, 168, 231);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+  display: none;
+  font-size: 1.5rem;
+  z-index: 1000;
+}
+
+#back-to-top:hover {
+  background-color: rgb(7, 33, 48);
+}

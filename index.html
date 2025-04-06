@@ -2,15 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="/src/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Durant</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-    <script type="Tailwindcss" src="https://cdn.tailwindcss.com"></script>
+    <link href="/src/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   </head>
   <body class="bg-gray-800 text-white font-sans leading-normal tracking-normal m-2">
-
     <!-- Navigation -->
     <header class="bg-blue-600 text-white py-4">
       <div class="max-w-6xl mx-auto px-4 flex justify-between items-center text-center">
@@ -19,12 +18,13 @@
           <ul class="flex space-x-6 justify-center">
             <li><a href="#about" class="hover:text-gray-200">About</a></li>
             <li><a href="#projects" class="hover:text-gray-200">Projects</a></li>
+            <li><a href="#resume" class="hover:text-gray-200">Resume</a></li>
             <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
-  
+
     <!-- Hero Section -->
     <section class="bg-blue-700 text-white py-16 text-center">
       <div class="max-w-6xl mx-auto px-4">
@@ -32,15 +32,17 @@
         <p class="mt-4 text-lg">I'm Durant, a passionate software developer.</p>
       </div>
     </section>
-  
+
     <!-- About Section -->
     <section id="about" class="py-16 px-4 mx-auto text-center">
       <div class="max-w-6xl mx-auto">
         <h3 class="text-5xl font-semibold">About Me</h3>
-        <p class="mt-4 text-lg">I specialize in full-stack web development and have a deep passion for building scalable applications. I am proficient in MySQL, Python, C++, and Amazon Web Services (AWS) Foundational Products, with years of experience in data analysis, software development, and cloud computing. I am skilled in using data-driven decision-making, building scalable applications, and implementing automation in cloud environments. Experienced in developing solutions that improve operational efficiency and data accuracy. I am passionate in pursuing Information Technology - Computer Programming and getting hands-on experience in data structures, database management, and web development.</p>
+        <p class="mt-4 text-lg">
+          I specialize in full-stack web development and have a deep passion for building scalable applications. I am proficient in MySQL, Python, C++, and AWS Foundational Products, with years of experience in data analysis, software development, and cloud computing.
+        </p>
       </div>
     </section>
-  
+
     <!-- Projects Section -->
     <section id="projects" class="bg-gray-700 py-16 px-4 text-center">
       <div class="max-w-6xl mx-auto">
@@ -48,9 +50,9 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           <div class="bg-white p-6 rounded-lg shadow-lg">
             <h4 class="text-xl font-bold">Project 1</h4>
-            <p class="mt-2 text-gray-600">Look where you are... YES, my Durantmr.dev website that you are currently on is my first large project. I have used HTML, Tailwindcss, Vite with React, JS with emailJS, and this has been a journey. Please try to enjoy the visual. 👍🏾</p>
+            <p class="mt-2 text-gray-600">This website is my first large project. Built with HTML, TailwindCSS, Vite, React, and EmailJS.</p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="bg-white p-6 rounded-lg shadow-lg"></div>
             <h4 class="text-xl font-bold">Project 2</h4>
             <p class="mt-2 text-gray-600">Description of project 2...</p>
           </div>
@@ -61,7 +63,15 @@
         </div>
       </div>
     </section>
-  
+
+    <!-- Resume Section -->
+    <section id="resume" class="bg-blue-700 text-white py-16 text-center"></section>
+      <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-6xl font-extrabold">My Resume</h1>
+        <h3 class="text-6xl font-extrabold">Experience</h3>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-800 text-center px-4">
       <div class="max-w-6xl mx-auto">
@@ -71,89 +81,45 @@
           <input type="email" id="user_email" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Email">
           <textarea id="user_message" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Message"></textarea>
           <button type="submit" id="send-message-btn" class="w-full bg-blue-600 text-white py-3 rounded">Send Message</button>
-          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
         </form>
       </div>
     </section>
-  
+
     <!-- Footer -->
     <footer class="bg-blue-600 text-white py-4 text-center">
       <p>&copy; 2025 Durant's Portfolio</p>
     </footer>
 
-    <!-- Script to load JavaScript dynamically -->
-    <script type="module" src="/assets/index-cPCgavN9.js"></script>
+    <!-- Back to Top Button -->
     <button id="back-to-top" class="hidden fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all">
       ↑
     </button>
-    
+
+    <!-- Scripts -->
+    <script type="module" src="/assets/index-cPCgavN9.js"></script>
     <script>
-      // Wait until the DOM content is fully loaded
       document.addEventListener("DOMContentLoaded", function() {
         const backToTopButton = document.getElementById("back-to-top");
-    
-        // Show the button when scrolling down
+
         window.onscroll = function() {
-          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopButton.style.display = "block";
-          } else {
-            backToTopButton.style.display = "none";
-          }
+          backToTopButton.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
         };
-    
-        // Scroll to the top when clicked
+
         backToTopButton.addEventListener("click", function() {
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
-      });
-    </script>
-    <script>
-      // Initialize EmailJS
-      emailjs.init('TM3v5X7CgwuuICHXv'); // Replace with your EmailJS user ID
-    
-      // Handle form submission
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();  // Prevent the default form submission
-    
-        // Get form values
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-    
-        // Send the email using EmailJS
-        emailjs.send('service_3kxo3a2', 'your_template_id', {
-          from_email: email,
-          message: message
-        })
-        .then(function(response) {
-          alert('Message sent successfully!');
-        }, function(error) {
-          alert('Failed to send message, please try again.');
+
+        emailjs.init('TM3v5X7CgwuuICHXv');
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          const formData = new FormData(this);
+
+          emailjs.sendForm('service_3kxo3a2', 'YOUR_TEMPLATE_ID', formData, 'TM3v5X7CgwuuICHXv')
+            .then(() => alert("Message sent successfully!"))
+            .catch(() => alert("Failed to send message. Please try again."));
         });
       });
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-    <script type="text/javascript">
-      // Add your public key and other details
-      const publicKey = 'TM3v5X7CgwuuICHXv'; // Replace with your public key from EmailJS
-      const serviceID = 'service_3kxo3a2'; // Replace with your service ID from EmailJS
-      const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID from EmailJS
-    
-      // Add event listener to the form submit button
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault();
-    
-          // Create an object with the form values
-          let formData = new FormData(this);
-          
-          // Send form data via EmailJS
-          emailjs.sendForm(serviceID, templateID, formData, publicKey)
-              .then(function(response) {
-                  alert("Message sent successfully!");
-              }, function(error) {
-                  alert("Failed to send message. Please try again.");
-              });
-      });
-    </script>
-    
   </body>
 </html>
