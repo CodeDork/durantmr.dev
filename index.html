@@ -6,6 +6,8 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Durant</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="Tailwindcss" src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-800 text-white font-sans leading-normal tracking-normal m-2">
 
@@ -65,10 +67,11 @@
       <div class="max-w-6xl mx-auto">
         <h3 class="text-3xl font-semibold">Contact</h3>
         <p class="mt-4 text-lg text-white">Feel free to reach out to me!</p>
-        <form class="mt-8 space-y-6 mx-auto">
-          <input type="email" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Email">
-          <textarea class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Message"></textarea>
-          <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded">Send Message</button>
+        <form id="contact-form" class="mt-8 space-y-6 max-w-6xl mx-auto">
+          <input type="email" id="user_email" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Email">
+          <textarea id="user_message" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Message"></textarea>
+          <button type="submit" id="send-message-btn" class="w-full bg-blue-600 text-white py-3 rounded">Send Message</button>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
         </form>
       </div>
     </section>
@@ -80,5 +83,55 @@
 
     <!-- Script to load JavaScript dynamically -->
     <script type="module" src="/assets/index-cPCgavN9.js"></script>
+    <button id="back-to-top" class="hidden fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all">
+      ↑
+    </button>
+    
+    <script>
+      // Wait until the DOM content is fully loaded
+      document.addEventListener("DOMContentLoaded", function() {
+        const backToTopButton = document.getElementById("back-to-top");
+    
+        // Show the button when scrolling down
+        window.onscroll = function() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.display = "block";
+          } else {
+            backToTopButton.style.display = "none";
+          }
+        };
+    
+        // Scroll to the top when clicked
+        backToTopButton.addEventListener("click", function() {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
+    <script>
+      // Initialize EmailJS
+      emailjs.init('TM3v5X7CgwuuICHXv'); // Replace with your EmailJS user ID
+    
+      // Handle form submission
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the default form submission
+    
+        // Get form values
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+    
+        // Send the email using EmailJS
+        emailjs.send('service_3kxo3a2', 'your_template_id', {
+          from_email: email,
+          message: message
+        })
+        .then(function(response) {
+          alert('Message sent successfully!');
+        }, function(error) {
+          alert('Failed to send message, please try again.');
+        });
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
   </body>
 </html>
