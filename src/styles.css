@@ -23,6 +23,28 @@ body {
   background-color: rgb(138, 167, 216);
   color: rgb(36, 43, 56);
 }
+#resume {
+  max-height: 400px;      /* Limit the height of the section */
+  overflow-y: auto;       /* Add vertical scrollbar when content overflows */
+}
+
+/* Styling the scrollbar for #resume */
+#resume::-webkit-scrollbar {
+  width: 8px;  /* Width of the scrollbar */
+}
+
+#resume::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* Color of the scrollbar track */
+}
+
+#resume::-webkit-scrollbar-thumb {
+  background: #888;     /* Color of the scrollbar thumb */
+  border-radius: 10px;  /* Rounded corners */
+}
+
+#resume::-webkit-scrollbar-thumb:hover {
+  background: #555;     /* Darker color when hovering */
+}
 
 .section {
   padding: 1rem;
@@ -161,4 +183,22 @@ textarea {
 
 #back-to-top:hover {
   background-color: rgb(7, 33, 48);
+}
+
+/* Styling the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;     /* Color of the scrollbar thumb */
+  border-radius: 10px;  /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;     /* Darker color when hovering */
 }

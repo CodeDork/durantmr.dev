@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Durant's Portfolio">
+    <meta name="author" content="Durant">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Durant</title>
     <link href="/src/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-6"></div>
   </head>
   <body class="bg-gray-800 text-white font-sans leading-normal tracking-normal m-2">
     <!-- Navigation -->
@@ -46,29 +50,67 @@
     <!-- Projects Section -->
     <section id="projects" class="bg-gray-700 py-16 px-4 text-center">
       <div class="max-w-6xl mx-auto">
-        <h3 class="text-3xl font-semibold text-white">Projects</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h4 class="text-xl font-bold">Project 1</h4>
-            <p class="mt-2 text-gray-600">This website is my first large project. Built with HTML, TailwindCSS, Vite, React, and EmailJS.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg"></div>
-            <h4 class="text-xl font-bold">Project 2</h4>
-            <p class="mt-2 text-gray-600">Description of project 2...</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h4 class="text-xl font-bold">Project 3</h4>
-            <p class="mt-2 text-gray-600">Description of project 3...</p>
-          </div>
+      <div class="text-3xl font-semibold text-white">Projects</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-xl font-bold">Project "DurantMR.dev"</div>
+        <div class="mt-2 text-gray-600">This website is my first large project. Built with HTML, TailwindCSS, Vite, React, and EmailJS.</div>
         </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-xl font-bold">Project 2</div>
+        <div class="mt-2 text-gray-600">Description of project 2...</div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="text-xl font-bold">Project 3</div>
+        <div class="mt-2 text-gray-600">Description of project 3...</div>
+        </div>
+      </div>
       </div>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="bg-blue-700 text-white py-16 text-center"></section>
+    <section id="resume" class="bg-blue-700 text-white py-16 text-center overflow-y-auto max-h-screen"></section>
       <div class="max-w-6xl mx-auto px-4">
         <h1 class="text-6xl font-extrabold">My Resume</h1>
         <h3 class="text-6xl font-extrabold">Experience</h3>
+        <ul class="list-disc list-inside text-left mt-4 text-lg">
+          <li>
+            <div class="text-center">
+              <strong>General Motors</strong> <em>Service Advisor | 2014 – 2018</em>
+            </div>
+            <ul class="list-disc list-inside ml-6">
+              <li>• Creating work orders, estimating costs, and obtaining customer approvals</li>
+              <li>• Keeping customers updated on repair progress and coordinating with technicians</li>
+              <li>• Maintaining service records and ensuring accurate billing</li>
+              <li>• Assisting the Service Manager with reviewing daily activities and expectations for the service team, including:
+                <ul class="list-disc list-inside ml-6">
+                  <li>Customer Index Scores</li>
+                  <li>Time Keeping</li>
+                  <li>Training to Improve</li>
+                  <li>Role-playing with the team</li>
+                  <li>Meeting dealership expectations of the department</li>
+                </ul>
+              </li>
+              <li>• Collaborating with the service team to ensure a seamless customer experience</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="max-w-6xl mx-auto px-4">
+        <ul class="list-disc list-inside text-left mt-4 text-lg">
+          <li>
+            <div class="text-center">
+              <strong>Big Lots</strong> <em>Information Technology Support | 2018 - 2023</em>
+            </div>
+            <ul class="list-disc list-inside ml-6">
+              <li>• An experienced engineering leader dedicated to people development, fostering a robust team environment, and cultivating an inclusive culture</li>
+              <li>• Skilled in working with customers and demonstrating customer empathy by deeply understanding user needs, what constitutes a good user experience, and the ability to translate and prioritize user requirements into actionable tasks</li>
+              <li>• Approach problems with a product mindset with experience in close partnerships with Product Management and Design</li>
+              <li>• Work closely with data scientists, analysts, and software engineers to understand data requirements and deliver appropriate software solutions</li>
+              <li>• Implement data security practices, including data encryption, access controls, and compliance with industry regulations</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -92,7 +134,7 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="hidden fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all">
-      ↑
+      🔝
     </button>
 
     <!-- Scripts -->
