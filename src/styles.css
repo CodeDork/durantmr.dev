@@ -103,6 +103,9 @@ body {
     textarea {
         resize: none; /* no resize */
         height: 100px; /* 100px height */
+        keyboard: auto; /* auto keyboard */
+        width: 20%; /* 100% width */
+        padding: 0.5rem; /* 0.5rem padding */
     }
     select {
         border: 1px solid #ccc; /* light gray border */
