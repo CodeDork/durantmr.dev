@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import './styles.css'; // Make sure to link your styles
-import emailjs from '@emailjs/browser';
 import App from './App';
 import './index.css'; // Import your CSS file
 
