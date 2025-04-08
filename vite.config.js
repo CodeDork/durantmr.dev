@@ -3,11 +3,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: "/durantmr.dev/",
-  plugins: [
-    react()
-  ],
+  plugins: [react()],
   css: {
-    postcss: '/postcss.config.js'
+    postcss: '/postcss.config.js',
   },
   root: "./",
   build: {
@@ -17,8 +15,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        nested: './nested/index.html'
-      }
-    }
+        nested: './nested/index.html',
+      },
+    },
   },
 });
