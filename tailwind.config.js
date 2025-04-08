@@ -1,9 +1,11 @@
 const path = require('path');
 
+const resolvePath = (relativePath) => path.resolve(__dirname, relativePath);
+
 module.exports = {
   content: [
-    path.resolve(__dirname, './index.html'),
-    path.resolve(__dirname, './src/**/*.{js,jsx,ts,tsx}'),
+    resolvePath('./index.html'),
+    resolvePath('./src/**/*.{js,jsx,ts,tsx}'),
   ],
   theme: {
     extend: {},

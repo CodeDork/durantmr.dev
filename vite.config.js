@@ -8,5 +8,17 @@ export default defineConfig({
   ],
   css: {
     postcss: '/postcss.config.js'
-  }
+  },
+  root: "./",
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        nested: './nested/index.html'
+      }
+    }
+  },
 });

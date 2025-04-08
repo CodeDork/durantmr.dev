@@ -42,7 +42,13 @@
       <div class="max-w-6xl mx-auto">
         <h3 class="text-5xl font-semibold">About Me</h3>
         <p class="mt-4 text-lg">
-          I am an experienced software and web developer with expertise in MySQL, Python, C++, and AWS. With a solid background in data analysis, cloud computing, and full-stack development, I specialize in building scalable applications and optimizing operational workflows. I am passionate about leveraging technology to create efficient solutions and enhance data-driven decision-making. Currently focused on deepening my knowledge in cloud infrastructure, database management, and web development, I aim to contribute innovative solutions that drive business growth and improve user experience.
+          I am an experienced software and web developer with expertise in MySQL, 
+          Python, C++, and AWS. With a solid background in data analysis, cloud computing, 
+          and full-stack development, I specialize in building scalable applications and 
+          optimizing operational workflows. I am passionate about leveraging technology to 
+          create efficient solutions and enhance data-driven decision-making. Currently focused on 
+          deepening my knowledge in cloud infrastructure, database management, and web development, 
+          I aim to contribute innovative solutions that drive business growth and improve user experience.
         </p>
       </div>
     </section>
@@ -143,13 +149,17 @@
         </ul>
       </div>
     </section>
-
+<script>
+  function handleFormSubmit(event) {
+    event.preventDefault();  // Prevent the default form submission
+  }
+</script>
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-800 text-center px-4">
       <div class="max-w-6xl mx-auto">
         <h3 class="text-3xl font-semibold">Contact</h3>
         <p class="mt-4 text-lg text-white">Feel free to reach out to me!</p>
-        <form id="contact-form" class="mt-8 space-y-6 max-w-6xl mx-auto">
+        <form id="contact-form" class="mt-8 space-y-6 max-w-6xl mx-auto" onsubmit="handleFormSubmit(event)"></form>
           <input type="email" id="user_email" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Email">
           <textarea id="user_message" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Message"></textarea>
           <button type="submit" id="send-message-btn" class="w-full bg-blue-600 text-white py-3 rounded">Send Message</button>
@@ -170,28 +180,40 @@
     <!-- Scripts -->
     <script type="module" src="/assets/index-cPCgavN9.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const backToTopButton = document.getElementById("back-to-top");
+      document.addEventListener("DOMContentLoaded", () => {
+      const backToTopButton = document.getElementById("back-to-top");
 
-        window.onscroll = function() {
-          backToTopButton.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
-        };
+      // Show or hide the back-to-top button based on scroll position
+      window.addEventListener("scroll", () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        backToTopButton.style.display = scrollTop > 0 ? "block" : "none";
+      });
 
-        backToTopButton.addEventListener("click", function() {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+      // Ensure the button is visible on page load if not at the top
+      const initialScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      backToTopButton.style.display = initialScrollTop > 0 ? "block" : "none";
 
-        emailjs.init('TM3v5X7CgwuuICHXv');
+      // Smooth scroll to top when the button is clicked
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const formData = new FormData(this);
+      let formData = new FormData(this);
 
-          emailjs.sendForm('service_3kxo3a2', 'YOUR_TEMPLATE_ID', formData, 'TM3v5X7CgwuuICHXv')
-            .then(() => alert("Message sent successfully!"))
-            .catch(() => alert("Failed to send message. Please try again."));
-        });
+      // Handle contact form submission
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(contactForm);
+
+        emailjs.sendForm('service_3kxo3a2', 'EmailJS_Template', formData, 'TM3v5X7CgwuuICHXv')
+        .then(() => alert("Message sent successfully!"))
+        .catch(() => alert("Failed to send message. Please try again."));
+      });
       });
     </script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
   </body>
 </html>
