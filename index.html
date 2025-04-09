@@ -12,6 +12,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-6"></div>
+    
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+    <script type="text/javascript">
+      (function(){
+         emailjs.init("TM3v5X7CgwuuICHXv");
+      })();
+    </script>
+    <script src="script.js"></script>
   </head>
   <body class="bg-gray-800 text-white font-sans leading-normal tracking-normal m-2">
     <!-- Navigation -->
@@ -159,9 +169,11 @@
       <div class="max-w-6xl mx-auto">
         <h3 class="text-3xl font-semibold">Contact</h3>
         <p class="mt-4 text-lg text-white">Feel free to reach out to me!</p>
-        <form id="contact-form" class="mt-8 space-y-6 max-w-6xl mx-auto" onsubmit="handleFormSubmit(event)"></form>
-          <input type="email" id="user_email" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Email">
-          <textarea id="user_message" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Message"></textarea>
+        <form id="contact-form" class="mt-8 space-y-6 max-w-6xl mx-auto" onsubmit="sendMail(event)"></form>
+          <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Name">
+          <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Email">
+          <input type="text" id="subject" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Subject" required />
+          <textarea id="message" class="w-full p-3 border border-gray-300 rounded mb-4" placeholder="Your Message"></textarea>
           <button type="submit" id="submit" class="w-full bg-blue-600 text-white py-3 rounded">Send Message</button>
         </form>
       </div>
@@ -197,23 +209,7 @@
       backToTopButton.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
-
-      let formData = new FormData(this);
-
-      // Handle contact form submission
-      const contactForm = document.getElementById('contact-form');
-      contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const formData = new FormData(contactForm);
-
-        emailjs.sendForm('service_3kxo3a2', 'EmailJS_Template', formData, 'TM3v5X7CgwuuICHXv')
-        .then(() => alert("Message sent successfully!"))
-        .catch(() => alert("Failed to send message. Please try again."));
-      });
       });
     </script>
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
   </body>
 </html>
