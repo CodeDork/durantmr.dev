@@ -1,8 +1,10 @@
-const path = require('path');
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const resolvePath = (relativePath) => path.resolve(__dirname, relativePath);
 
-module.exports = {
+export default {
   content: [
     resolvePath('./index.html'),
     resolvePath('./src/**/*.{js,jsx,ts,tsx}'),

@@ -1,6 +1,5 @@
 @import "tailwindcss/preflight";
 @tailwind utilities;
-@tailwind utilities;
 
 body {
   margin: 1rem;
@@ -18,8 +17,8 @@ body {
   text-transform: none;
   text-shadow: none;
   text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  //overflow: hidden;
+  //white-space: nowrap;
   background-color: rgb(138, 167, 216);
   color: rgb(36, 43, 56);
 }
