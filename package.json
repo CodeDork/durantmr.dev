@@ -17,7 +17,7 @@
     "react-dom": "^19.0.0",
     "react-router": "^7.8.0",
     "react-router-dom": "^7.8.0",
-    "tmp": "^0.2.3"
+    "tmp": "^0.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
