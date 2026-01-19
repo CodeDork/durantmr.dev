@@ -212,51 +212,65 @@
     </button>
 
     <!-- Scripts -->
-    <script type="module" src="/assets/index-cPCgavN9.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-      const backToTopButton = document.getElementById("back-to-top");
+<!-- EmailJS & Form Handling -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  (function() {
+    emailjs.init("TM3v5X7CgwuuICHXv"); // ✅ your public key
+  })();
 
-      // Show or hide the back-to-top button based on scroll position
-      window.addEventListener("scroll", () => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        backToTopButton.style.display = scrollTop > 0 ? "block" : "none";
-      });
-
-      // Ensure the button is visible on page load if not at the top
-      const initialScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      backToTopButton.style.display = initialScrollTop > 0 ? "block" : "none";
-
-      // Smooth scroll to top when the button is clicked
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-
-        function sanitizeInput(input) {
-  return input.replace(/[<>`"'\\]/g, '').trim(); // Strips dangerous characters
-}
-
-        function handleFormSubmit(event) {
-  event.preventDefault();
-
-  const form = event.target;
-  const honeypot = form.querySelector('[name="botcheck"]').value;
-  if (honeypot !== "") {
-    alert("Bot submission blocked.");
-    return;
-  }}
-
-  const name = sanitizeInput(form.name.value);
-  const email = sanitizeInput(form.email.value);
-  const subject = sanitizeInput(form.subject.value);
-  const message = sanitizeInput(form.message.value);
-
-  if ([name, email, subject, message].some(field => field === "")) {
-    alert("All fields are required.");
-    return;
+  // Sanitize user input
+  function sanitizeInput(input) {
+    return input.replace(/[<>`"'\\]/g, '').trim();
   }
 
-      });
-      });
-    </script>
+  // Handle form submission
+  function sendMail(event) {
+    event.preventDefault();
+
+    const form = document.getElementById("contact-form");
+    const name = sanitizeInput(document.getElementById("name").value);
+    const email = sanitizeInput(document.getElementById("email").value);
+    const subject = sanitizeInput(document.getElementById("subject").value);
+    const message = sanitizeInput(document.getElementById("message").value);
+
+    if (!name || !email || !subject || !message) {
+      alert("All fields are required.");
+      return;
+    }
+
+    // Send using EmailJS
+    emailjs.send("service_1t6bavq", "template_vpu7zrd", {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message
+    })
+    .then(
+      function() {
+        alert("✅ Message sent successfully!");
+        form.reset();
+      },
+      function(error) {
+        console.error("EmailJS Error:", error);
+        alert("❌ Failed to send message. Please try again later.");
+      }
+    );
+  }
+
+  // Back to top button
+  document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+      backToTopButton.style.display =
+        document.documentElement.scrollTop > 0 ? "block" : "none";
+    });
+    backToTopButton.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    );
+  });
+</script>
+
   </body>
 </html>
