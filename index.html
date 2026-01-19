@@ -230,6 +230,31 @@
       // Smooth scroll to top when the button is clicked
       backToTopButton.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
+
+        function sanitizeInput(input) {
+  return input.replace(/[<>`"'\\]/g, '').trim(); // Strips dangerous characters
+}
+
+        function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const honeypot = form.querySelector('[name="botcheck"]').value;
+  if (honeypot !== "") {
+    alert("Bot submission blocked.");
+    return;
+  }}
+
+  const name = sanitizeInput(form.name.value);
+  const email = sanitizeInput(form.email.value);
+  const subject = sanitizeInput(form.subject.value);
+  const message = sanitizeInput(form.message.value);
+
+  if ([name, email, subject, message].some(field => field === "")) {
+    alert("All fields are required.");
+    return;
+  }
+
       });
       });
     </script>
