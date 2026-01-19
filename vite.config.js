@@ -4,6 +4,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: "/durantmr.dev/",
   plugins: [react()],
+   server: {
+    fs: {
+      strict: true,
+      deny: ['.env', '.env.*', '*.crt', '*.pem'],
+    },
   css: {
     postcss: '/postcss.config.js',
   },
