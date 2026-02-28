@@ -17,7 +17,7 @@
     "react-dom": "^19.0.0",
     "react-router": "^7.8.0",
     "react-router-dom": "^7.8.0",
-    "tar": "^7.5.3",
+    "tar": "^7.5.8",
     "tmp": "^0.2.3"
   },
   "devDependencies": {
