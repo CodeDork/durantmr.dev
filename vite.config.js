@@ -9,6 +9,7 @@ export default defineConfig({
       strict: true,
       deny: ['.env', '.env.*', '*.crt', '*.pem'],
     },
+  },
   css: {
     postcss: '/postcss.config.js',
   },
